@@ -42,7 +42,7 @@ const RecordAnswerSection = (props: PropType) => {
 
   useEffect(() => {
       typeof results!='string' && results.map((result) => {
-        setUserAnswer(prevAns => prevAns + result?.transcript)
+        setUserAnswer(prevAns => prevAns + result.transcript)
       })
   }, [results])
 
