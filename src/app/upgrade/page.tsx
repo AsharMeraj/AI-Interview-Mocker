@@ -1,12 +1,9 @@
-'use client'
-import React, { useState } from 'react'
+import React from 'react'
 import Header from '../dashboard/_components/Header'
 import { Button } from '@/components/ui/button'
-import { Cross } from 'lucide-react'
 import Link from 'next/link'
 
 const Upgrade = () => {
-    const [showPlan, setShowPlan] = useState<boolean>(false)
 
     return (
         <>
@@ -124,7 +121,7 @@ const Upgrade = () => {
 
 
                                 </ul>
-                                <Link href={'https://buy.stripe.com/test_8wM7tr5r86W8h0sfYY'} target='_blank'>
+                                <Link href={'https://buy.stripe.com/test_4gwaFDaLs5S4h0scMO'}>
                                     <div className='w-full m-auto mt-8 '>
                                         <Button className='w-full rounded-full'>Get Started</Button>
                                     </div>
