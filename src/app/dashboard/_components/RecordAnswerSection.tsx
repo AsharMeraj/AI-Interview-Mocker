@@ -41,9 +41,11 @@ const RecordAnswerSection = (props: PropType) => {
   });
 
   useEffect(() => {
-    if (typeof results !== 'string') {
+    if (Array.isArray(results)) {
       results.forEach((result) => {
-        setUserAnswer((prevAns) => prevAns + result.transcript);
+        if (result.transcript) {
+          setUserAnswer((prevAns) => prevAns + result.transcript);
+        }
       });
     }
   }, [results]);
@@ -55,7 +57,7 @@ const RecordAnswerSection = (props: PropType) => {
     }
   }, [userAnswer])
 
-  const StartStopRecording = async () => {
+  const StartStopRecording = () => {
     if (isRecording) {
       stopSpeechToText()
     }
