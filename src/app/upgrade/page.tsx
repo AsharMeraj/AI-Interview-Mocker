@@ -121,7 +121,7 @@ const Upgrade = () => {
 
 
                                 </ul>
-                                <Link href={process.env.NEXT_PUBLIC_NEXT_PUBLIC_STRIPE_PAYMENT_LINK as string}>
+                                <Link href={'https://buy.stripe.com/test_cN24hfg5MeoAcKc147'}>
                                     <div className='w-full m-auto mt-8 '>
                                         <Button className='w-full rounded-full'>Get Started</Button>
                                     </div>
