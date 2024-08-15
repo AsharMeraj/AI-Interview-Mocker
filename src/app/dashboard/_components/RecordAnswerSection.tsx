@@ -43,7 +43,7 @@ const RecordAnswerSection = (props: PropType) => {
   useEffect(() => {
     if (Array.isArray(results)) {
       results.forEach((result) => {
-        if (result.transcript) {
+        if (typeof result !== 'string' && 'transcript' in result) {
           setUserAnswer((prevAns) => prevAns + result.transcript);
         }
       });
