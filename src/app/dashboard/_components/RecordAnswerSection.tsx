@@ -11,7 +11,6 @@ import { mockInterviewQuestionType, MockInterviewType, UserAnswer } from '@/util
 import { db } from '@/utils/db';
 import { useUser } from '@clerk/nextjs';
 import moment from 'moment';
-import { useRouter } from 'next/navigation';
 
 type PropType = {
   mockInterviewQuestion: mockInterviewQuestionType[],
@@ -28,7 +27,6 @@ const RecordAnswerSection = (props: PropType) => {
   const [userAnswer, setUserAnswer] = useState<string>("")
   const [loading, setLoading] = useState<boolean>(false)
   const { user } = useUser()
-  const router = useRouter()
   const {
     error,
     interimResult,
@@ -43,9 +41,9 @@ const RecordAnswerSection = (props: PropType) => {
   });
 
   useEffect(() => {
-    results.map((result) => {
-      setUserAnswer(prevAns => prevAns + result?.transcript)
-    })
+      typeof results!='string' && results.map((result) => {
+        setUserAnswer(prevAns => prevAns + result?.transcript)
+      })
   }, [results])
 
   useEffect(() => {
