@@ -5,7 +5,6 @@ import React, { useEffect, useState } from 'react'
 import { eq } from 'drizzle-orm'
 import QuestionSection from '@/app/dashboard/_components/QuestionSection'
 import dynamic from 'next/dynamic';
-import { SQLiteInsertBuilder } from 'drizzle-orm/sqlite-core';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
