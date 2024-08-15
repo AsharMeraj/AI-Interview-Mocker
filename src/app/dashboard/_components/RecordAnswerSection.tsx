@@ -41,12 +41,13 @@ const RecordAnswerSection = (props: PropType) => {
   });
 
   useEffect(() => {
-    if (typeof results != 'string') {
-      results.map((result) => {
-        setUserAnswer(prevAns => prevAns + result.transcript)
-      })
+    if (typeof results !== 'string') {
+      results.forEach((result) => {
+        setUserAnswer((prevAns) => prevAns + result.transcript);
+      });
     }
-  }, [results])
+  }, [results]);
+  
 
   useEffect(() => {
     if (!isRecording && userAnswer.length > 10) {
