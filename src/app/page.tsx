@@ -7,10 +7,10 @@ import Worth from './_homeComponents/Worth'
 import FreeTrial from './_homeComponents/FreeTrial'
 import Reviews from './_homeComponents/Reviews'
 
+
 const page = () => {
   return (
     <main>
-      <Header />
       <Hero />
       <Feature1 />
       <Feature2 />

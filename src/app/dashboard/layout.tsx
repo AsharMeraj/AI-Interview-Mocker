@@ -9,7 +9,6 @@ function DashboardLayout({
 }>) {
   return (
     <section>
-      <Header />
       <main className="mx-5 md:mx-20   xl:mx-52">
         {children}
       </main>

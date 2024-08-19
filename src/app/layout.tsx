@@ -33,6 +33,7 @@ export default function RootLayout({
             showSpinner={false}
           />
           <Toaster className="text-lg"/>
+          <Header/>
           {children}
           <Footer/>
         </body>
