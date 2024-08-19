@@ -11,10 +11,6 @@ export default clerkMiddleware((auth, req) => {
     if (isProtectedRoute(req)) {
         auth().protect();
     }
-    if (req.nextUrl.pathname === '/') {
-        // Redirect to the dashboard
-        return NextResponse.redirect(new URL('/dashboard', req.url));
-    }
 });
 
 export const config = {

@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import { Mulish, Montserrat, Baloo_Bhai_2, Poppins } from "next/font/google";
+import { Mulish, Montserrat, Baloo_2, Poppins, Quicksand, Radio_Canada, Luckiest_Guy } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import Header from "./dashboard/_components/Header";
 import { Toaster } from "@/components/ui/sonner";
 import NextTopLoader from "nextjs-toploader";
+import Footer from "./_homeComponents/Footer";
 
-const inter = Mulish({ subsets: ["latin"], weight: '500' });
+const inter = Baloo_2({ subsets: ["latin"] , weight: "500"});
 
 export const metadata: Metadata = {
   title: "AI Interview Mocker",
@@ -25,7 +26,7 @@ export default function RootLayout({
       <html lang="en">
         <body className={inter.className}>
           <NextTopLoader
-            color="#c90000"
+            color="#f10000"
             height={2}
             shadow={'0 0 0 0'}
             speed={500}
@@ -33,6 +34,7 @@ export default function RootLayout({
           />
           <Toaster className="text-lg"/>
           {children}
+          <Footer/>
         </body>
       </html>
     </ClerkProvider>

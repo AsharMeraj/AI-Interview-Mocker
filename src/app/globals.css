@@ -3,5 +3,9 @@
 @tailwind utilities;
 
 :root{
-    --primary-color: #c90000;
+    --primary-color: #f10000;
+}
+
+#font-heading{
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
 }

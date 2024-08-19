@@ -40,8 +40,8 @@ const StartInterview = (params: { params: { interviewID: string } }) => {
     }
 
     return (
-        <section className='my-0 md:my-20'>
-            <main className='grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-12'>
+        <section className='my-0 md:my-20 lg:mt-32'>
+            <main className='grid grid-cols-1 md:grid-cols-2 items-center gap-0 md:gap-12'>
                 {/* Questions */}
                 <QuestionSection
                     activeQuestionIndex={activeQuestionIndex}

@@ -9,8 +9,8 @@ const Upgrade = () => {
         <>
             <Header />
             <section className='p-10'>
-                <h2 className='w-fit m-auto text-2xl font-bold'>Upgrade</h2>
-                <h2 className='w-fit m-auto text-gray-500'>Upgrade to monthly plan to access unlimited mock interview</h2>
+                <h2 id='font-heading' className='text-2xl md:text-3xl xl:text-4xl font-extrabold tracking-normal w-fit m-auto'>Upgrade</h2>
+                <h2 className='w-fit m-auto text-gray-500 mt-2'>Upgrade to monthly plan to access unlimited mock interview</h2>
                 <main className=''>
                     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
                         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:items-center md:gap-8">

@@ -79,7 +79,7 @@ const AddNewInterview = () => {
 
     return (
         <div className=''>
-            <div className='p-10 border border-black/20 rounded-[0.5rem] hover:scale-105 shadow-white shadow-md hover:shadow-gray-400 cursor-pointer transition-all' onClick={() => setOpenDialog(true)}>
+            <div className='p-10 border border-black/20 rounded-3xl hover:scale-105 shadow-white shadow-md hover:shadow-gray-400 cursor-pointer transition-all' onClick={() => setOpenDialog(true)}>
                 <h2 className='text-lg text-center'>+ Add New</h2>
             </div>
             <Dialog open={openDialog}>
@@ -107,7 +107,7 @@ const AddNewInterview = () => {
                                         </div>
                                     </div>
                                     <div className='flex gap-5 justify-end'>
-                                        <Button type='button' variant="ghost" onClick={() => setOpenDialog(false)}>Cancel</Button>
+                                        <Button type='button' variant="outline" onClick={() => setOpenDialog(false)}>Cancel</Button>
                                         <Button type='submit' disabled={loading}>
                                             {
                                                 loading ?

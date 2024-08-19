@@ -99,11 +99,11 @@ const RecordAnswerSection = (props: PropType) => {
   return (
     <section className='flex items-center justify-center flex-col'>
       <main className='flex flex-col w-fit h-fit justify-center items-center rounded-[0.5rem] bg-black p-5'>
-        <Image alt='webcam' src={"/webcam.png"} width={200} height={200} className='absolute' />
+        <Image alt='webcam' src={"/webcam.png"} height={200} width={200} className=' p-4 mb-7 rounded-[0.5rem] absolute' />
         <Webcam
           mirrored={true}
           style={{
-            height: 400,
+            height: 300,
             width: '100%',
             zIndex: 10,
           }} />

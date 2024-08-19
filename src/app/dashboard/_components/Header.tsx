@@ -1,35 +1,41 @@
-'use client'
-import { UserButton } from '@clerk/nextjs'
-import Image from 'next/image'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import NextTopLoader from 'nextjs-toploader'
-import React from 'react'
+'use client';
+import React, { useEffect, useState } from 'react'
+import HeaderComponent from './HeaderComponent';
+import HeaderMobComp from './HeaderMobComp';
 
-const Header = () => {
+export default function Navbar() {
+    const [showMobileNav, setShowMobileNav] = useState<boolean>(false)
+    const [position, setPosition] = useState<boolean>(false);
+    function AppearNavbar() {
+        if (window.scrollY >= 200) {
+            setPosition(true);
+        }
+        else if (window.scrollY <= 200) {
+            setPosition(false);
+        }
 
-    const path = usePathname();
-
+    }
+    useEffect(() => {
+        window.addEventListener('scroll', AppearNavbar);
+    }, [])
     return (
-        <>
-            <div className='flex p-6 items-center justify-between shadow-xl shadow-black/15'>
-                <div className='flex flex-row justify-between gap-2 items-center'>
-                    <Image alt='logo.svg' src="/logo.svg" width={40} height={41} />
-                    <h1 className='font-bold text-[1.2rem] text-[--primary-color]'>AIM</h1>
-                </div>
-                <ul className='hidden md:flex w-[30rem] lg:w-[40rem] justify-between'>
-                    <Link href={'/dashboard'} className={path === '/dashboard' ? `font-semibold text-[--primary-color] border-b-2 border-[--primary-color] cursor-pointer text-[1.05rem] transition-all duration-100` : "hover:text-[--primary-color] border-b-2 border-white cursor-pointer text-[1rem] transition-all duration-100 hover:scale-105 font-"}>Dashboard</Link>
+        <div>
+            <nav className="flex h-[5.5rem] max-[561px]:h-[5rem] w-full">
+            </nav>
+            <nav className="h-[5.5rem] max-[561px]:h-[5rem] bg-white fixed top-0 translate-y-0 duration-700 w-full flex items-center  justify-center z-10 shad">
+                    <HeaderComponent setShowMobileNav={setShowMobileNav} />
+            </nav>
+            {/* <nav className={position ? 'h-[5.5rem] max-[561px]:h-[5rem] bg-white fixed top-0 shadow-xl shadow-[rgba(0,0,0,0.15)] translate-y-0 duration-700 w-full flex items-center  justify-center  z-10' : "absolute top-0 translate-y-[-100%]  w-full flex items-center  justify-center bg-white h-[5.5rem] max-[561px]:h-[5rem]"}>
+                    <HeaderComponent setShowMobileNav={setShowMobileNav} />
+            </nav> */}
 
-                    <Link href={'/'} className={path === '/questions' ? `font-semibold  text-[--primary-color] border-b-2 border-[--primary-color] cursor-pointer text-[1.05rem] transition-all duration-100` : "hover:text-[--primary-color] border-b-2 border-white cursor-pointer text-[1rem] transition-all duration-100 hover:scale-105 font-"}>Questions</Link>
-
-                    <Link href={'/upgrade'} className={path === '/upgrade' ? `font-semibold  text-[--primary-color] border-b-2 border-[--primary-color] cursor-pointer text-[1.05rem] transition-all duration-100` : "hover:text-[--primary-color] border-b-2 border-white cursor-pointer text-[1rem] transition-all duration-100 hover:scale-105 font-"}>Upgrade</Link>
-
-                    <Link href={'/'} className={path === '/howitworks' ? `font-semibold  text-[--primary-color] border-b-2 border-[--primary-color] cursor-pointer text-[1.05rem] transition-all duration-100` : "hover:text-[--primary-color] border-b-2 border-white cursor-pointer text-[1rem] transition-all duration-100 hover:scale-105 font-"}>How It Works?</Link>
-                </ul>
-                <UserButton />
-            </div>
-        </>
+            <main className={`flex items-center justify-center h-screen bg-white w-full px-20 fixed left-0 top-0 duration-700 z-10  ${showMobileNav ? 'translate-x-[0] ' : 'translate-x-[100%]'}`}>
+                    <HeaderMobComp showMobileNav={showMobileNav} setShowMobileNav={setShowMobileNav} />
+            </main>
+        </div>
     )
 }
 
-export default Header
+
+
+

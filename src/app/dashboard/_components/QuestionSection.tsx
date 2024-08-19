@@ -23,26 +23,28 @@ const QuestionSection = (props: PropType) => {
     }
 
     return props.mockInterviewQuestion && (
-        <div className='p-5 border rounded-[0.5rem] '>
-            <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5'>
-                {props.mockInterviewQuestion && props.mockInterviewQuestion.map((question, index) => {
-                    return (
-                        <h2
-                            key={index}
-                            className={props.activeQuestionIndex == index ? 'bg-[--primary-color] text-white p-2 rounded-full text-xs md:text-sm text-center cursor-pointer' : 'p-2 rounded-full bg-black/5 text-xs md:text-sm text-center cursor-pointer'}>
-                            Question #{index + 1}
-                        </h2>
-                    )
-                })}
+        <div className='p-5 border rounded-[0.5rem] h-full flex flex-col justify-between'>
+            <div>
+                <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5'>
+                    {props.mockInterviewQuestion && props.mockInterviewQuestion.map((question, index) => {
+                        return (
+                            <h2
+                                key={index}
+                                className={props.activeQuestionIndex == index ? 'bg-[--primary-color] text-white p-2 rounded-full text-xs md:text-sm text-center cursor-pointer' : 'p-2 rounded-full bg-black/5 text-xs md:text-sm text-center cursor-pointer'}>
+                                Question #{index + 1}
+                            </h2>
+                        )
+                    })}
 
+                </div>
+                <h2 className='mt-5 text-md md:text-lg'>{props.mockInterviewQuestion[props.activeQuestionIndex]?.question}</h2>
+
+                <Volume2
+                    className='cursor-pointer my-3'
+                    onClick={() => textToSpeech(props.mockInterviewQuestion[props.activeQuestionIndex]?.question)} />
             </div>
-            <h2 className='my-5 text-md md:text-lg'>{props.mockInterviewQuestion[props.activeQuestionIndex]?.question}</h2>
 
-            <Volume2 
-            className='cursor-pointer' 
-            onClick={() => textToSpeech(props.mockInterviewQuestion[props.activeQuestionIndex]?.question)} />
-
-            <div className='border rounded-[0.5rem] p-5 bg-[#c90000]/15 mt-20'>
+            <div className='border rounded-[0.5rem] p-5 bg-[#c90000]/15'>
                 <h2 className='flex gap-2 items-center text-[--primary-color]'>
                     <Lightbulb />
                     <strong>Note:</strong>
