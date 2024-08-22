@@ -45,7 +45,7 @@ const Interview = ({ params }: { params: { interviewID: string } }) => {
                         </h2>
                         <h2 className='text-lg '>
                             <strong className='text-[--primary-color]'>Years of Experience:&nbsp;&nbsp;</strong>
-                            {interviewData?.jobPosition}
+                            {interviewData?.jobExperience}
                         </h2>
                     </div>
                     <div className='p-5 border rounded-[0.5rem] border-yellow-300 bg-yellow-100'>
