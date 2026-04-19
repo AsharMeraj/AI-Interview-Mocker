@@ -76,3 +76,8 @@ Once the session wraps up, you get a full breakdown of how you did. Every questi
 | Camera Feed | react-webcam |
 | Date Formatting | moment.js |
 
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE). Feel free to use, fork, and build on it. 🚀
