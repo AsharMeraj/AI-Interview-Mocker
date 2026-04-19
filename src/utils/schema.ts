@@ -5,9 +5,6 @@ export type mockInterviewQuestionType = {
     question: string
 }
 
-
-
-
 export type MockInterviewType = {
     id: number,
     jsonMockResp: string,
