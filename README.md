@@ -76,3 +76,4 @@ Once the session wraps up, you get a full breakdown of how you did. Every questi
 | Camera Feed | react-webcam |
 | Date Formatting | moment.js |
 
+---
